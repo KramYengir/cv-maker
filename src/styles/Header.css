@@ -1,0 +1,9 @@
+header {
+  min-width: 100%;
+  background-color: steelblue;
+  padding-block: 10px;
+}
+
+h3 {
+  color: rgb(238, 235, 228);
+}
