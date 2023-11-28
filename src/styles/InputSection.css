@@ -1,0 +1,21 @@
+.input-section {
+  display: grid;
+  gap: 2rem;
+
+  min-width: 60%;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+form label {
+  display: grid;
+  padding-inline: 10px;
+}
+
+form input {
+  padding: 5px 10px;
+  border-radius: 5px;
+}
