@@ -1,8 +1,8 @@
 const Skills = () => {
   return (
-    <div>
+    <section>
       <h2>Skills</h2>
-    </div>
+    </section>
   );
 };
 

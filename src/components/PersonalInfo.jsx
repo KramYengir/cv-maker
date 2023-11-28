@@ -1,6 +1,6 @@
 const PersonalInfo = () => {
   return (
-    <div>
+    <section>
       <h2>Personal Info</h2>
       <form action="#">
         <label htmlFor="fullname">
@@ -20,7 +20,7 @@ const PersonalInfo = () => {
           <input id="phone" type="phone" placeholder="Phone Number..."></input>
         </label>
       </form>
-    </div>
+    </section>
   );
 };
 

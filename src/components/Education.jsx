@@ -1,8 +1,8 @@
 const Education = () => {
   return (
-    <div>
+    <section>
       <h2>Education</h2>
-    </div>
+    </section>
   );
 };
 
