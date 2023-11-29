@@ -13,6 +13,8 @@ const EducationForm = () => {
 
   const addEducation = () => {
     let areErrors = false;
+
+    //check for empty fields
     Object.values(educationList[educationList.length - 1]).forEach((val) => {
       if (val === "") areErrors = true;
     });
@@ -23,6 +25,12 @@ const EducationForm = () => {
       ...educationList,
       { school: "", degree: "", from: "", to: "" },
     ]);
+  };
+
+  const deleteEducation = (index) => {
+    const updatedEducationList = [...educationList];
+    updatedEducationList.splice(index, 1);
+    setEducationList(updatedEducationList);
   };
 
   return (
@@ -41,7 +49,7 @@ const EducationForm = () => {
           </label>
 
           <label>
-            Degree/Award{" "}
+            Degree/Award
             <input
               required
               type="text"
@@ -70,6 +78,16 @@ const EducationForm = () => {
               onChange={(e) => handleInputChange(e, index, "to")}
             />
           </label>
+
+          {index !== educationList.length - 1 && ( // Show delete button for all forms except the last one
+            <button
+              className="delete-btn"
+              type="button"
+              onClick={() => deleteEducation(index)}
+            >
+              Remove
+            </button>
+          )}
         </div>
       ))}
 
