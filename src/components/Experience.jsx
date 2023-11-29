@@ -1,5 +1,5 @@
 import { useState } from "react";
-import InputHeader from "./InputHeader";
+import InputHeader from "./input_components/InputHeader";
 
 const Experience = () => {
   const [isOpen, setIsOpen] = useState(false);

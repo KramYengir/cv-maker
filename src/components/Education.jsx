@@ -1,5 +1,6 @@
 import { useState } from "react";
-import InputHeader from "./InputHeader";
+import InputHeader from "./input_components/InputHeader";
+import EducationForm from "./input_components/EducationForm";
 
 const Education = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +11,7 @@ const Education = () => {
   return (
     <section>
       <InputHeader title="Education" isOpen={isOpen} onClick={toggleExpand} />
+      {isOpen && <EducationForm />}
     </section>
   );
 };

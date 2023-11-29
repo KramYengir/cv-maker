@@ -15,6 +15,13 @@
   margin: 0;
 }
 
+.input-section section .input-header button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: aliceblue;
+}
+
 form {
   display: grid;
   gap: 1rem;

@@ -1,8 +1,11 @@
 import { useState } from "react";
-import InputHeader from "./InputHeader";
+import InputHeader from "./input_components/InputHeader";
+
+const personObj = { fullName: "", email: "", phone: "" };
 
 const PersonalInfo = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [personalInfo, setPersonalInfo] = useState(personObj);
 
   const toggleExpand = () => {
     setIsOpen(!isOpen);
@@ -20,6 +23,10 @@ const PersonalInfo = () => {
           <label htmlFor="fullname">
             Full Name
             <input
+              value={personalInfo.fullName}
+              onChange={(e) =>
+                setPersonalInfo({ ...personalInfo, fullName: e.target.value })
+              }
               id="fullname"
               type="text"
               placeholder="First & Last Name.."
@@ -28,6 +35,10 @@ const PersonalInfo = () => {
           <label htmlFor="email">
             Email
             <input
+              value={personalInfo.email}
+              onChange={(e) =>
+                setPersonalInfo({ ...personalInfo, email: e.target.value })
+              }
               id="email"
               type="email"
               placeholder="Email Address..."
@@ -36,6 +47,10 @@ const PersonalInfo = () => {
           <label htmlFor="phone">
             Phone
             <input
+              value={personalInfo.phone}
+              onChange={(e) =>
+                setPersonalInfo({ ...personalInfo, phone: e.target.value })
+              }
               id="phone"
               type="phone"
               placeholder="Phone Number..."
