@@ -5,7 +5,9 @@
   min-width: min(80%, 600px);
 }
 
-.input-section section h2 {
+.input-section section .input-header {
+  display: flex;
+  justify-content: space-between;
   background-color: steelblue;
   color: aliceblue;
   padding: 5px 10px;
@@ -16,9 +18,9 @@
 form {
   display: grid;
   gap: 1rem;
-  padding-block: 10px;
+  padding: 30px 20px;
   background-color: lightsteelblue;
-  /*border: 1px solid slategray;*/
+  border-radius: 0 0 5px 5px;
 }
 
 form label {

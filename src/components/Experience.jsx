@@ -1,7 +1,16 @@
+import { useState } from "react";
+import InputHeader from "./InputHeader";
+
 const Experience = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleExpand = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <section>
-      <h2>Experience</h2>
+      <InputHeader title="Experience" isOpen={isOpen} onClick={toggleExpand} />
     </section>
   );
 };
