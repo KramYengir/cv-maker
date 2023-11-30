@@ -12,7 +12,9 @@ const Skills = () => {
   return (
     <section>
       <InputHeader title="Skills" isOpen={isOpen} onClick={toggleExpand} />
-      <SkillsForm />
+      <div style={{ display: isOpen ? "block" : "none" }}>
+        <SkillsForm />
+      </div>
     </section>
   );
 };

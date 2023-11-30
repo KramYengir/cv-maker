@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const EducationForm = () => {
   const [educationList, setEducationList] = useState([
     { school: "", degree: "", from: "", to: "" },
   ]);
+
+  useEffect(() => {
+    console.log("EducationForm mounted");
+    return () => {
+      console.log("EducationForm unmounted");
+    };
+  }, []);
 
   const handleInputChange = (e, index, property) => {
     const updatedEducationList = [...educationList];
@@ -21,16 +28,18 @@ const EducationForm = () => {
 
     if (areErrors) return;
 
-    setEducationList([
-      ...educationList,
+    setEducationList((prevEducationList) => [
+      ...prevEducationList,
       { school: "", degree: "", from: "", to: "" },
     ]);
   };
 
   const deleteEducation = (index) => {
-    const updatedEducationList = [...educationList];
-    updatedEducationList.splice(index, 1);
-    setEducationList(updatedEducationList);
+    setEducationList((prevEducationList) => {
+      const updatedEducationList = [...prevEducationList];
+      updatedEducationList.splice(index, 1);
+      return updatedEducationList;
+    });
   };
 
   return (

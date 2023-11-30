@@ -12,7 +12,9 @@ const Experience = () => {
   return (
     <section>
       <InputHeader title="Experience" isOpen={isOpen} onClick={toggleExpand} />
-      {isOpen && <ExperienceForm />}
+      <div style={{ display: isOpen ? "block" : "none" }}>
+        <ExperienceForm />
+      </div>
     </section>
   );
 };

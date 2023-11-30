@@ -43,6 +43,10 @@ form label {
   padding-inline: 10px;
 }
 
+form p {
+  font-size: larger;
+}
+
 form input,
 form textarea {
   padding: 5px 10px;
@@ -58,6 +62,17 @@ form button {
 
 form .remove-btn {
   background-color: palevioletred;
+}
+form ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+}
+form ul li {
+  background-color: aliceblue;
+  padding: 5px 10px;
+  border-radius: 20px;
 }
 
 form ul li button {
