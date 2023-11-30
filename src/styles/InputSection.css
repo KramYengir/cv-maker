@@ -3,6 +3,14 @@
   gap: 2rem;
 
   min-width: min(80%, 600px);
+  max-height: 100vh;
+  padding: 10px;
+
+  overflow-y: auto;
+}
+
+.input-section section {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .input-section section .input-header {
@@ -25,7 +33,7 @@
 form {
   display: grid;
   gap: 1rem;
-  padding: 30px 20px;
+  padding: 30px 40px 30px 20px;
   background-color: lightsteelblue;
   border-radius: 0 0 5px 5px;
 }
@@ -38,4 +46,15 @@ form label {
 form input {
   padding: 5px 10px;
   border-radius: 5px;
+}
+
+form button {
+  max-width: 60%;
+  margin-inline: auto;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+form .remove-btn {
+  background-color: palevioletred;
 }

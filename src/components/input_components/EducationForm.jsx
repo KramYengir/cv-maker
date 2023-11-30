@@ -34,9 +34,9 @@ const EducationForm = () => {
   };
 
   return (
-    <form>
+    <>
       {educationList.map((education, index) => (
-        <div key={index}>
+        <form key={index}>
           <label>
             School/Organization/Course
             <input
@@ -81,20 +81,22 @@ const EducationForm = () => {
 
           {index !== educationList.length - 1 && ( // Show delete button for all forms except the last one
             <button
-              className="delete-btn"
+              className="remove-btn"
               type="button"
               onClick={() => deleteEducation(index)}
             >
               Remove
             </button>
           )}
-        </div>
-      ))}
 
-      <button type="submit" onClick={addEducation}>
-        Submit Education
-      </button>
-    </form>
+          {index === educationList.length - 1 && (
+            <button type="submit" onClick={addEducation}>
+              Submit Education
+            </button>
+          )}
+        </form>
+      ))}
+    </>
   );
 };
 
