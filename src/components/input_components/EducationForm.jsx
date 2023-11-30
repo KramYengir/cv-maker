@@ -63,7 +63,8 @@ const EducationForm = () => {
             From
             <input
               required
-              type="date"
+              type="text"
+              placeholder="Jan 2020"
               value={education.from}
               onChange={(e) => handleInputChange(e, index, "from")}
             />
@@ -73,7 +74,8 @@ const EducationForm = () => {
             To
             <input
               required
-              type="date"
+              type="text"
+              placeholder="May 2023"
               value={education.to}
               onChange={(e) => handleInputChange(e, index, "to")}
             />
