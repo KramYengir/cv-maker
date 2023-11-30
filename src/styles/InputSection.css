@@ -43,7 +43,8 @@ form label {
   padding-inline: 10px;
 }
 
-form input {
+form input,
+form textarea {
   padding: 5px 10px;
   border-radius: 5px;
 }
