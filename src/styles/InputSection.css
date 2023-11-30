@@ -59,3 +59,10 @@ form button {
 form .remove-btn {
   background-color: palevioletred;
 }
+
+form ul li button {
+  color: red;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+}
