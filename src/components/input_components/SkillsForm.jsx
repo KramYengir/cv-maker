@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SkillsForm = () => {
+const SkillsForm = ({ sendSkillsData }) => {
   const [skill, setSkill] = useState("");
   const [skillsList, setSkillsList] = useState([]);
 
@@ -12,6 +12,7 @@ const SkillsForm = () => {
     if (e.key === "Enter" && skill.trim() !== "") {
       // Add the skill to the list when Enter is pressed
       setSkillsList([...skillsList, skill.trim()]);
+      sendSkillsData([...skillsList, skill.trim()]);
       setSkill(""); // Clear the input
     }
   };
@@ -20,6 +21,7 @@ const SkillsForm = () => {
     const updatedSkillsList = [...skillsList];
     updatedSkillsList.splice(index, 1);
     setSkillsList(updatedSkillsList);
+    sendSkillsData(updatedSkillsList);
   };
 
   const handleAddSkill = (e, skill) => {
@@ -27,6 +29,7 @@ const SkillsForm = () => {
     if (skill.trim() !== "" && skillsList.length !== 10) {
       // Add the skill to the list when the button is clicked
       setSkillsList([...skillsList, skill.trim()]);
+      sendSkillsData([...skillsList, skill.trim()]);
       setSkill(""); // Clear the input
     }
   };

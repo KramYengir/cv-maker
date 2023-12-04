@@ -3,9 +3,15 @@ import InputHeader from "./input_components/InputHeader";
 
 const personObj = { fullName: "", email: "", phone: "" };
 
-const PersonalInfo = () => {
+const PersonalInfo = ({ sendPersonaldata }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [personalInfo, setPersonalInfo] = useState(personObj);
+
+  const handleInputChange = (e, field) => {
+    let updatedData = { ...personalInfo, [field]: e.target.value };
+    setPersonalInfo(updatedData);
+    sendPersonaldata(updatedData);
+  };
 
   const toggleExpand = () => {
     setIsOpen(!isOpen);
@@ -24,9 +30,7 @@ const PersonalInfo = () => {
             Full Name
             <input
               value={personalInfo.fullName}
-              onChange={(e) =>
-                setPersonalInfo({ ...personalInfo, fullName: e.target.value })
-              }
+              onChange={(e) => handleInputChange(e, "fullName")}
               id="fullname"
               type="text"
               placeholder="First & Last Name.."
@@ -36,9 +40,7 @@ const PersonalInfo = () => {
             Email
             <input
               value={personalInfo.email}
-              onChange={(e) =>
-                setPersonalInfo({ ...personalInfo, email: e.target.value })
-              }
+              onChange={(e) => handleInputChange(e, "email")}
               id="email"
               type="email"
               placeholder="Email Address..."
@@ -48,9 +50,7 @@ const PersonalInfo = () => {
             Phone
             <input
               value={personalInfo.phone}
-              onChange={(e) =>
-                setPersonalInfo({ ...personalInfo, phone: e.target.value })
-              }
+              onChange={(e) => handleInputChange(e, "phone")}
               id="phone"
               type="phone"
               placeholder="Phone Number..."

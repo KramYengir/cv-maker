@@ -2,8 +2,14 @@ import { useState } from "react";
 import InputHeader from "./input_components/InputHeader";
 import ExperienceForm from "./input_components/ExperienceForm";
 
-const Experience = () => {
+const Experience = ({ sendExperienceData }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [experienceData, setExperienceData] = useState([]);
+
+  const updateExperienceData = (newExperienceData) => {
+    setExperienceData(newExperienceData);
+    sendExperienceData(newExperienceData);
+  };
 
   const toggleExpand = () => {
     setIsOpen(!isOpen);
@@ -13,7 +19,7 @@ const Experience = () => {
     <section>
       <InputHeader title="Experience" isOpen={isOpen} onClick={toggleExpand} />
       <div style={{ display: isOpen ? "block" : "none" }}>
-        <ExperienceForm />
+        <ExperienceForm sendExperienceData={updateExperienceData} />
       </div>
     </section>
   );

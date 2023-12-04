@@ -3,7 +3,7 @@ import { FaAngleUp } from "react-icons/fa";
 
 const InputHeader = ({ title, isOpen, onClick }) => {
   return (
-    <div className="input-header">
+    <div className="input-header" onClick={onClick}>
       <h2>{title}</h2>
       <button onClick={onClick}>
         {isOpen ? <FaAngleUp /> : <FaAngleDown />}

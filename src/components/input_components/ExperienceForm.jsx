@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ExperienceForm = () => {
+const ExperienceForm = ({ sendExperienceData }) => {
   const [experienceList, setExperienceList] = useState([
     { work: "", role: "", from: "", to: "", summary: "" },
   ]);
@@ -9,6 +9,7 @@ const ExperienceForm = () => {
     const updatedExperienceList = [...experienceList];
     updatedExperienceList[index][property] = e.target.value;
     setExperienceList(updatedExperienceList);
+    sendExperienceData(updatedExperienceList);
   };
 
   const addExperience = () => {
@@ -31,6 +32,7 @@ const ExperienceForm = () => {
     const updatedExperienceList = [...experienceList];
     updatedExperienceList.splice(index, 1);
     setExperienceList(updatedExperienceList);
+    sendExperienceData(updatedExperienceList);
   };
 
   return (

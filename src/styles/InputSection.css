@@ -5,12 +5,14 @@
   min-width: min(80%, 600px);
   max-height: 100vh;
   padding: 10px;
+  padding-right: 50px;
 
   overflow-y: auto;
 }
 
 .input-section section {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 0 0 10px 10px;
 }
 
 .input-section section .input-header {
@@ -18,9 +20,14 @@
   justify-content: space-between;
   background-color: steelblue;
   color: aliceblue;
-  padding: 5px 10px;
+  padding: 10px 15px;
   border-radius: 5px 5px 0 0;
   margin: 0;
+  cursor: pointer;
+}
+
+.input-section section .input-header h2 {
+  margin-inline: auto;
 }
 
 .input-section section .input-header button {
@@ -28,14 +35,16 @@
   border: none;
   font-size: 1.5rem;
   color: aliceblue;
+  cursor: pointer;
 }
 
 form {
   display: grid;
   gap: 1rem;
   padding: 30px 40px 30px 20px;
-  background-color: lightsteelblue;
-  border-radius: 0 0 5px 5px;
+  /*background-color: lightsteelblue;*/
+  background-color: whitesmoke;
+  border-radius: 0 0 10px 10px;
 }
 
 form label {
@@ -49,7 +58,7 @@ form p {
 
 form input,
 form textarea {
-  padding: 5px 10px;
+  padding: 10px 15px;
   border-radius: 5px;
 }
 
@@ -70,14 +79,22 @@ form ul {
   list-style: none;
 }
 form ul li {
-  background-color: aliceblue;
-  padding: 5px 10px;
+  background-color: steelblue;
+  color: white;
+  padding: 5px 15px;
   border-radius: 20px;
 }
 
 form ul li button {
-  color: red;
+  color: rgb(206, 0, 0);
   border: none;
   background-color: transparent;
   border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+form ul li button:hover,
+form ul li button:focus {
+  transform: scale(1.4) rotate(360deg);
 }

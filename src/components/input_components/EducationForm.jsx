@@ -1,21 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const EducationForm = () => {
+const EducationForm = ({ sendEducationData }) => {
   const [educationList, setEducationList] = useState([
     { school: "", degree: "", from: "", to: "" },
   ]);
-
-  useEffect(() => {
-    console.log("EducationForm mounted");
-    return () => {
-      console.log("EducationForm unmounted");
-    };
-  }, []);
 
   const handleInputChange = (e, index, property) => {
     const updatedEducationList = [...educationList];
     updatedEducationList[index][property] = e.target.value;
     setEducationList(updatedEducationList);
+    sendEducationData(updatedEducationList);
   };
 
   const addEducation = () => {
@@ -38,6 +32,7 @@ const EducationForm = () => {
     setEducationList((prevEducationList) => {
       const updatedEducationList = [...prevEducationList];
       updatedEducationList.splice(index, 1);
+      sendEducationData(updatedEducationList);
       return updatedEducationList;
     });
   };
