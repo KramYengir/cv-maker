@@ -32,7 +32,7 @@ const InputSection = ({
   const updateEducationData = (newEducationData) => {
     setEducationList(newEducationData);
     sendEducationData(newEducationData);
-    console.table(newEducationData);
+    // console.table(newEducationData);
   };
 
   const updateExperienceData = (newExperienceData) => {
