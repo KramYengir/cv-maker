@@ -1,7 +1,7 @@
 import { useState } from "react";
 import InputHeader from "./input_components/InputHeader";
 
-const personObj = { fullName: "", email: "", phone: "" };
+const personObj = { fullName: "", location: "", email: "", phone: "" };
 
 const PersonalInfo = ({ sendPersonaldata }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,6 +34,16 @@ const PersonalInfo = ({ sendPersonaldata }) => {
               id="fullname"
               type="text"
               placeholder="First & Last Name.."
+            ></input>
+          </label>
+          <label htmlFor="location">
+            Location
+            <input
+              value={personalInfo.location}
+              onChange={(e) => handleInputChange(e, "location")}
+              id="location"
+              type="text"
+              placeholder="Liverpool, UK"
             ></input>
           </label>
           <label htmlFor="email">

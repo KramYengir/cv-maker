@@ -1,6 +1,17 @@
 :root {
+  /* sizes */
   --A4-width: clamp(281px, 80%, 21cm);
   --A4-height: clamp(400px, 80%, 29.7cm);
+
+  --lg-font: 12px;
+  --reg-font: 10px;
+  --sml-font: 8px;
+
+  /* colors */
+  --bg-color: rgb(84, 90, 95);
+  --dark: black;
+  --dark-accent: grey;
+  --light: whitesmoke;
 }
 
 .preview-container {
@@ -13,8 +24,115 @@
 .preview-container .cv-preview {
   width: var(--A4-width);
   aspect-ratio: 21/29.7;
-  padding: calc(var(--A4-width) * 0.1); /* Margin */
 
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/**** PERSONAL INFO SECTION ****/
+
+.personal-info {
+  padding: calc(var(--A4-width) * 0.1);
+  background-color: var(--bg-color);
+  color: var(--light);
+}
+
+.personal-info h2 {
+  font-size: var(--lg-font);
+  margin-bottom: 0.1rem;
+}
+.personal-info h3 {
+  font-size: var(--sml-font);
+  margin-bottom: 0.1rem;
+}
+
+/**** EDUCATION INFO SECTION ****/
+
+.education-info {
+  padding: 5px calc(var(--A4-width) * 0.1);
+  color: var(--dark);
+}
+
+.education-info h2 {
+  font-size: var(--lg-font);
+  margin-block: 0.3rem;
+  color: var(--light);
+  background-color: var(--dark-accent);
+}
+
+.education-info h3 {
+  font-size: var(--reg-font);
+  color: var(--dark);
+  margin-bottom: 0.1rem;
+}
+
+.education-info h4 {
+  font-size: var(--sml-font);
+  color: var(--dark);
+  margin-bottom: 0.1rem;
+}
+
+.education-info h5 {
+  font-size: var(--sml-font);
+  color: var(--dark-accent);
+  margin-bottom: 0.5rem;
+}
+
+/**** EXPERIENCE INFO SECTION ****/
+
+.experience-info {
+  padding: 5px calc(var(--A4-width) * 0.1);
+  color: var(--dark);
+}
+
+.experience-info h2 {
+  font-size: var(--lg-font);
+  margin-block: 0.3rem;
+  color: var(--light);
+  background-color: var(--dark-accent);
+}
+
+.experience-info h3 {
+  font-size: var(--reg-font);
+  color: var(--dark);
+  margin-bottom: 0.1rem;
+}
+
+.experience-info h4 {
+  font-size: var(--sml-font);
+  color: var(--dark);
+  margin-bottom: 0.1rem;
+}
+
+.experience-info h5 {
+  font-size: var(--sml-font);
+  color: var(--dark-accent);
+  margin-bottom: 0.5rem;
+}
+
+.experience-info p {
+  font-size: var(--sml-font);
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+  max-width: 80%;
+}
+
+/**** SKILLS INFO SECTION ****/
+
+.skills-info {
+  padding: 5px calc(var(--A4-width) * 0.1);
+  color: var(--dark);
+}
+
+.skills-info h2 {
+  font-size: var(--lg-font);
+  margin-block: 0.3rem;
+  color: var(--light);
+  background-color: var(--dark-accent);
+}
+
+.skills-info .skills-list {
+  display: grid;
+  grid-template-columns: auto auto;
+  font-size: var(--reg-font);
 }
