@@ -7,6 +7,7 @@ import Preview from "./components/Preview";
 function App() {
   const [personalInfo, setPersonalInfo] = useState({
     fullName: "",
+    location: "",
     email: "",
     phone: "",
   });

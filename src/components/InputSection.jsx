@@ -13,6 +13,7 @@ const InputSection = ({
 }) => {
   const [personalInfo, setPersonalInfo] = useState({
     fullName: "",
+    location: "",
     email: "",
     phone: "",
   });

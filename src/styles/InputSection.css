@@ -43,12 +43,13 @@ form {
   gap: 1rem;
   padding: 30px 40px 30px 20px;
   /*background-color: lightsteelblue;*/
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
   border-radius: 0 0 10px 10px;
 }
 
 form label {
   display: grid;
+  gap: 5px;
   padding-inline: 10px;
 }
 
@@ -60,12 +61,14 @@ form input,
 form textarea {
   padding: 10px 15px;
   border-radius: 5px;
+  background-color: whitesmoke;
+  border: none;
 }
 
 form button {
   max-width: 60%;
   margin-inline: auto;
-  padding: 5px 10px;
+  padding: 10px 10px;
   border-radius: 5px;
 }
 
