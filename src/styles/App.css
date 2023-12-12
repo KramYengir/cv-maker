@@ -9,6 +9,15 @@ main {
   padding: 40px 5vw;
 }
 
+@media screen and (max-width: 1000px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 40px 5vw;
+  }
+}
+
 main .left-side {
   display: flex;
   align-items: baseline;
