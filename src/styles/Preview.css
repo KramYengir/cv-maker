@@ -6,20 +6,20 @@
   --xl-font: 24px;
   --lg-font: 16px;
   --reg-font: 12px;
-  --sml-font: 10px;
+  --sml-font: 11px;
 
   /* colors */
   --bg-color: rgb(70, 130, 179);
   --dark: rgb(0, 0, 0);
-  --dark-accent: grey;
-  --light: whitesmoke;
+  --dark-accent: rgb(107, 107, 107);
+  --light: white;
 }
 
 .preview-container {
+  position: relative;
   width: calc(100%);
   max-height: 100vh;
   overflow-y: auto;
-  padding: 20px;
 }
 
 .preview-container .cv-preview {
@@ -35,7 +35,7 @@
 
   & h2 {
     font-size: var(--xl-font);
-    margin-block: 1rem 0.5rem;
+    margin-block: 0.5rem 0.5rem;
     color: var(--light);
     background-color: var(--bg-color);
     padding: 5px 5px;
@@ -52,23 +52,22 @@
     font-size: var(--reg-font);
     font-weight: 400;
     color: var(--dark);
-    margin-bottom: 0.05rem;
+    margin-bottom: 0.3rem;
   }
 
   & h5 {
     font-size: var(--sml-font);
     font-weight: 400;
-    font-style: italic;
     color: var(--dark-accent);
     margin-bottom: 0.1rem;
   }
 
   & p {
-    font-size: var(--sml-font);
+    font-size: var(--reg-font);
     text-transform: none;
-    max-width: 40%;
+    max-width: 80%;
     margin-bottom: 1rem;
-    margin-right: 25%;
+    margin-right: 10%;
     padding-top: 0.2rem;
   }
 }
@@ -86,31 +85,31 @@
   align-items: center;
   gap: 10px;
 
-  padding: calc(var(--A4-width) * 0.095) 10px 15px;
+  padding: calc(var(--A4-width) * 0.05) 10px 20px;
   background-color: var(--bg-color);
   color: var(--light);
   margin-bottom: 2rem;
 }
 
-.personal-details {
+.cv-preview .personal-details {
   display: flex;
   gap: 15px;
 }
 
-.personal-details div {
+.cv-preview .personal-details div {
   display: flex;
   gap: 2px;
 }
 
-.personal-details .icon {
+.cv-preview .personal-details .icon {
   font-size: var(--reg-font);
 }
 
-.personal-info h2 {
-  font-size: var(--xl-font);
+.cv-preview .personal-info h2 {
+  font-size: 2.5rem;
   margin-bottom: 0.3rem;
 }
-.personal-info .personal-details h3 {
+.cv-preview .personal-info .personal-details h3 {
   font-size: var(--reg-font);
   text-transform: none;
   margin-bottom: 0.1rem;
@@ -132,24 +131,20 @@
 /**** EXPERIENCE INFO SECTION ****/
 
 .experience-entry {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
+
   margin-bottom: 1rem;
 }
 
 /**** SKILLS INFO SECTION ****/
 
-.skills-info h2 {
-  font-size: var(--lg-font);
-  margin-block: 0.3rem;
-  color: var(--light);
-  background-color: var(--dark-accent);
-}
-
 .skills-list {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   row-gap: 0.5rem;
   font-size: var(--reg-font);
   text-transform: capitalize;
+
+  margin-top: 1rem;
 }

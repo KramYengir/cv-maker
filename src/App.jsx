@@ -3,8 +3,15 @@ import { useState } from "react";
 import Header from "./components/Header";
 import InputSection from "./components/InputSection";
 import Preview from "./components/Preview";
+import { FaRegFilePdf } from "react-icons/fa6";
+import { MdOutlineAutoFixHigh } from "react-icons/md";
+import { MdOutlineAutoFixOff } from "react-icons/md";
+import html2pdf from "html2pdf.js";
+import AutofillData from "./AutofillData";
 
 function App() {
+  const [isAutoFill, setIsAutoFill] = useState(true);
+
   const [personalInfo, setPersonalInfo] = useState({
     fullName: "",
     location: "",
@@ -18,6 +25,26 @@ function App() {
   ]);
 
   const [skillsList, setSkillsList] = useState([]);
+
+  const manageAutofill = () => {
+    setIsAutoFill(!isAutoFill);
+    if (isAutoFill) {
+      updatePersonalData(AutofillData.dummyPersonalInfo);
+      updateEducationData(AutofillData.dummyEducationInfo);
+      updateExperienceData(AutofillData.dummyExperienceInfo);
+      updateSkillsData(AutofillData.dummySkillsInfo);
+    } else {
+      updatePersonalData({
+        fullName: "",
+        location: "",
+        email: "",
+        phone: "",
+      });
+      updateEducationData([]);
+      updateExperienceData([]);
+      updateSkillsData([]);
+    }
+  };
 
   const updatePersonalData = (newPersonalData) => {
     setPersonalInfo(newPersonalData);
@@ -36,16 +63,32 @@ function App() {
     setSkillsList(newSkillsData);
   };
 
+  const exportToPDF = () => {
+    const cvPreviewPage = document.getElementById("cv-preview");
+    // eslint-disable-next-line no-undef
+    html2pdf(cvPreviewPage);
+  };
+
   return (
     <>
       <Header />
       <main>
-        <InputSection
-          sendPersonalData={updatePersonalData}
-          sendEducationData={updateEducationData}
-          sendExperienceData={updateExperienceData}
-          sendSkillsData={updateSkillsData}
-        ></InputSection>
+        <div className="left-side">
+          <div className="util-buttons">
+            <button className="util-button" onClick={manageAutofill}>
+              {isAutoFill ? <MdOutlineAutoFixHigh /> : <MdOutlineAutoFixOff />}
+            </button>
+            <button className="util-button" onClick={exportToPDF}>
+              <FaRegFilePdf />
+            </button>
+          </div>
+          <InputSection
+            sendPersonalData={updatePersonalData}
+            sendEducationData={updateEducationData}
+            sendExperienceData={updateExperienceData}
+            sendSkillsData={updateSkillsData}
+          ></InputSection>
+        </div>
         <Preview
           personalInfo={personalInfo}
           educationList={educationList}

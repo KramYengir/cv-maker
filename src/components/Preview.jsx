@@ -9,10 +9,9 @@ const Preview = ({
   experienceList,
   skillsList,
 }) => {
-  const isEmpty = (currentValue) => currentValue === "";
   return (
     <div className="preview-container">
-      <div className="cv-preview">
+      <div className="cv-preview" id="cv-preview">
         <div className="personal-info">
           <h2>{personalInfo && `${personalInfo.fullName}`}</h2>
           <div className="personal-details">

@@ -6,5 +6,32 @@ main {
   display: grid;
   grid-template-columns: 0.6fr 1fr;
   align-items: start;
-  padding: 20px 30px;
+  padding: 40px 5vw;
+}
+
+main .left-side {
+  display: flex;
+  align-items: baseline;
+}
+
+main .util-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+main .util-button {
+  background-color: var(--bg-color);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--bg-color);
+
+  font-size: var(--xl-font);
+  cursor: pointer;
+}
+
+main .util-button:hover,
+main .util-button:focus {
+  color: var(--bg-color);
+  background-color: transparent;
 }
