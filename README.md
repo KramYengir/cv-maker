@@ -1,5 +1,7 @@
 # The Odin Project - CV Maker Assignment
 
+Live Preview [here](https://cv-maker-plus.netlify.app/).
+
 ---
 
 This was our first React Assignment, where we must demonstrate our understanding of the basics of React and more specifically, React Components
